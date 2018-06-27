@@ -1,0 +1,81 @@
+第一次安装完成后，在CMD命令行下输入，添加配置信息
+git config --global user.name"Jacklee"
+git config --global user.email"noukdj@qq.com"
+将当前目录变为Git管理仓库
+git init
+添加文件 到Git仓库
+git add file.xxx file2.xxx
+提交文件 到Git仓库
+git commit -m "instruction"
+查看不同版本
+git diff file.xxx
+查看当前仓库状态
+git status
+查看历史记录，从最近到最远的 加参数不然卡死  --graph --pretty=oneline --abbrev-commit
+git log 
+到某个版本号commitid
+git reset --hard 1095as
+记录每一次操作命令,查看命令历史
+git reflog
+查看工作区和版本库文件区别
+git diff HEAD -- file.xxx
+丢弃工作区修改/误删文件恢复到最新版本
+git checkout -- file.xxx
+暂存区撤销，放回工作区
+git reset HEAD file.xxx
+版本库删除文件
+git rm file.xxx
+从远程库抓取最新提交
+git pull
+将最近修改添加到远程库
+git remote add origin git@github.com:michaelliao/learngit.git
+将最近修改分支master推送到远程库,第一次推送加 -u （会把本地master分支和远程的master分支关联起来）,后续不用
+git push -u origin master
+本地创建与远程分支对应的分支，本地分支和远程分支最好一致
+git checkout -b branch-name origin/branch-name 
+建立本地分支和远程分支的关联
+git brach --set-upstream branch-name origin/branch-name
+远程库克隆到本地
+git clone git@github.com:michaelliao/gitskills.git
+查看远程库信息
+git remote -v
+创建分支
+git branch dev
+切换到分支
+git checkout dev
+创建分支并切换
+git chekout -b dev
+查看当前分支
+git branch
+合并指定分支到当前分支
+git merge dev
+删除分支
+git branch -d dev
+查看分支合并图
+git log --graph
+工作现场暂存
+git stash
+工作现场恢复
+git stash apply
+工作现场删除
+git stash drop
+工作现场查看
+git stash list
+工作现场恢复+删除
+git stash pop
+丢弃未被合并的分支
+git branch -D dev
+对应commitid打标签
+git tag v9.0
+查看标签信息
+git show v9.0
+查看所有标签
+git tag
+删除标签
+git tag -d v9.0
+推送标签
+git push origin v9.0
+推送所有标签
+git push origin --tags
+删除远程标签
+git push origin :refs/tags/v9.0
